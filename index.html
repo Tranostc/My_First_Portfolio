@@ -3,109 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <title>Learning Platform</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .learners-container {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 12px;
+            border: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .learners-container h2 {
+            color: #4a5568;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            position: relative;
+        }
+
+        .learners-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        thead th {
+            padding: 18px 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+            position: relative;
+        }
+
+        thead th::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        thead th:hover::before {
+            opacity: 1;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 16px 15px;
+            text-align: center;
+            font-weight: 500;
+            color: #4a5568;
+            position: relative;
+        }
+
+        .country-flag {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 1.2em;
+        }
+
+        .age-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .name-cell {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            article {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            thead th, td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Web Page</h1>
-    
-    <h2>Introduction</h2>
-    <p>This is the first paragraph of my web page. It provides an overview of what this page is about. Here, I will discuss various topics of interest.</p>
-    
-    <h2>About Me</h2>
-    <p>This paragraph gives a brief introduction about myself. I am passionate about web development and enjoy learning new technologies.</p>
-    
-    <h3>My Interests</h3>
-    <p>In this section, I will outline some of my interests. I enjoy coding, exploring new programming languages, and working on exciting projects.</p>
-    
-    <h3>Future Goals</h3>
-    <p>Here, I will share my future goals. I aim to become a proficient software developer and contribute to open-source projects.</p>
-    
-    <h2>Clickable Image</h2>
-    <p>Click on the image below to learn more about ALX:</p>
-    <a href="https://www.alxafrica.com" target="_blank">
-        <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Logo" style="width:200px;height:auto;">
-    </a>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-</head>
-<body>
-    <header>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tweets.html">Tweets</a></li>
-        </ul>
-    </header>
+    <article>
+        <h1>🎓 Welcome to Our Learning Platform</h1>
+        
+        <p>Discover a world of knowledge and connect with learners from around the globe. Our platform brings together passionate individuals who are committed to continuous learning and growth.</p>
+        
+        <p>Whether you're just starting your educational journey or looking to expand your expertise, you'll find a supportive community of like-minded learners ready to share their experiences and insights.</p>
 
-    <main>
-        <article>
-            <h1>Welcome to My Web Page</h1>
+        <div class="learners-container">
+            <h2>🌍 Meet Our Global Learners</h2>
+            <p style="text-align: center; color: #718096; margin-bottom: 25px;">
+                Connect with fellow students from different corners of the world
+            </p>
             
-            <h2>Introduction</h2>
-            <p>This is the first paragraph of my web page. It provides an overview of what this page is about. Here, I will discuss various topics of interest.</p>
-            
-            <h2>About Me</h2>
-            <p>This paragraph gives a brief introduction about myself. I am passionate about web development and enjoy learning new technologies.</p>
-            
-            <h3>My Interests</h3>
-            <p>In this section, I will outline some of my interests. I enjoy coding, exploring new programming languages, and working on exciting projects.</p>
-            
-            <h3>Future Goals</h3>
-            <p>Here, I will share my future goals. I aim to become a proficient software developer and contribute to open-source projects.</p>
-            
-            <h2>Clickable Image</h2>
-            <p>Click on the image below to learn more about ALX:</p>
-            <a href="https://www.alxafrica.com" target="_blank">
-                <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Logo" style="width:200px;height:auto;">
-            </a>
-
-            <!-- Table of Learners -->
-            <h2>Learners Information</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Country</th>
+                        <th>👤 Name</th>
+                        <th>📅 Age</th>
+                        <th>🌎 Country</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>John</td>
-                        <td>25</td>
-                        <td>USA</td>
+                        <td class="name-cell">John</td>
+                        <td><span class="age-badge">25</span></td>
+                        <td>USA <span class="country-flag">🇺🇸</span></td>
                     </tr>
                     <tr>
-                        <td>Emily</td>
-                        <td>28</td>
-                        <td>Canada</td>
+                        <td class="name-cell">Emily</td>
+                        <td><span class="age-badge">28</span></td>
+                        <td>Canada <span class="country-flag">🇨🇦</span></td>
                     </tr>
                     <tr>
-                        <td>Michael</td>
-                        <td>32</td>
-                        <td>Australia</td>
+                        <td class="name-cell">Michael</td>
+                        <td><span class="age-badge">32</span></td>
+                        <td>Australia <span class="country-flag">🇦🇺</span></td>
                     </tr>
                     <tr>
-                        <td>Sophia</td>
-                        <td>21</td>
-                        <td>UK</td>
+                        <td class="name-cell">Sophia</td>
+                        <td><span class="age-badge">21</span></td>
+                        <td>UK <span class="country-flag">🇬🇧</span></td>
                     </tr>
                 </tbody>
             </table>
-        </article>
-        
-        <aside>
-            <p>placeholder to add comment thread later</p>
-        </aside>
-    </main>
-
-    <footer>
-        <p>Made by YOUR NAME - <a href="https://example.com" target="_blank">here</a>.</p>
-    </footer>
+        </div>
+    </article>
 </body>
 </html>
